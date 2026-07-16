@@ -1,0 +1,10 @@
+export EDITOR="code"
+export VISUAL="code"
+export PAGER="less"
+
+if [[ -d "/opt/homebrew/bin" ]]; then
+  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
+elif [[ -d "/usr/local/bin" ]]; then
+  export PATH="/usr/local/bin:${PATH}"
+fi
+

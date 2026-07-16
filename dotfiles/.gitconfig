@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = main
+[core]
+	editor = code --wait
+[pull]
+	ff = only
+[fetch]
+	prune = true
+

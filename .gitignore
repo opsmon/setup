@@ -1,0 +1,7 @@
+system-report/
+.DS_Store
+*.log
+.env
+.env.*
+npm-debug.log*
+

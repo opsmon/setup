@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="macOS Setup: one command for a ready-to-use engineering workspace on a new Mac."
+      data-i18n-content="meta.description"
+    >
+    <title>macOS Setup</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation" data-i18n-aria-label="nav.label">
+        <a class="brand" href="#top">macOS Setup</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu" data-i18n-aria-label="nav.open">
+          <span></span><span></span>
+        </button>
+        <div class="nav-links">
+          <a href="#install">Install</a>
+          <a href="#tools">Tools</a>
+          <a href="#checklist">Checklist</a>
+          <a href="#dotfiles">Dotfiles</a>
+          <a href="#security">Security</a>
+          <a href="https://github.com/opsmon/setup">GitHub</a>
+          <div class="language-switcher" role="group" aria-label="Language selection" data-i18n-aria-label="language.label">
+            <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+            <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-content">
+          <p class="eyebrow reveal" data-i18n="hero.eyebrow">Personal bootstrap kit</p>
+          <h1 class="hero-title reveal">macOS Setup</h1>
+          <p class="hero-subtitle reveal" data-i18n="hero.subtitle">One command. Fresh Mac. Ready workspace.</p>
+          <div class="hero-actions reveal">
+            <a class="button button-primary" href="#install" data-i18n="hero.install">Install now</a>
+            <a class="button button-secondary" href="https://github.com/opsmon/setup">GitHub</a>
+          </div>
+
+          <div class="setup-window reveal" aria-label="Installation example" data-i18n-aria-label="hero.demo">
+            <div class="window-bar">
+              <span class="window-title">setup.sh</span>
+              <span class="window-status">ready</span>
+            </div>
+            <div class="command-line">
+              <span class="prompt">$</span>
+              <code data-install-command>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh)"</code>
+              <button class="copy-button" type="button" data-copy-install data-i18n="common.copy">Copy</button>
+            </div>
+            <div class="install-flow">
+              <div><span>01</span><strong>Homebrew</strong><small data-i18n="flow.homebrew">Package foundation</small></div>
+              <div><span>02</span><strong>Terminal</strong><small data-i18n="flow.terminal">Zsh and dotfiles</small></div>
+              <div><span>03</span><strong>DevOps</strong><small>Docker & Kubernetes</small></div>
+              <div><span>04</span><strong>Editor</strong><small data-i18n="flow.editor">VS Code extensions</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="tools">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="tools.eyebrow">Основа рабочего окружения</p>
+            <h2 data-i18n="tools.title">Всё нужное. Без ручной рутины.</h2>
+            <p data-i18n="tools.subtitle">Проверенный набор для разработки, инфраструктуры и ежедневной работы.</p>
+          </div>
+          <div class="card-grid">
+            <article class="card reveal"><span class="badge" data-i18n="badge.foundation">Основа</span><h3>Homebrew</h3><p data-i18n="card.homebrew">Единый декларативный Brewfile для CLI и приложений.</p></article>
+            <article class="card reveal"><span class="badge">Shell</span><h3>Oh My Zsh</h3><p data-i18n="card.zsh">Плагины, powerlevel10k и удобные инженерные алиасы.</p></article>
+            <article class="card reveal"><span class="badge" data-i18n="badge.containers">Контейнеры</span><h3>Docker</h3><p data-i18n="card.docker">Docker Desktop, CLI и Compose для локальной разработки.</p></article>
+            <article class="card reveal"><span class="badge" data-i18n="badge.platform">Платформа</span><h3>Kubernetes</h3><p data-i18n="card.kubernetes">kubectl, Helm, k9s, kind и полезные дополнения устанавливаются автоматически.</p></article>
+            <article class="card reveal"><span class="badge" data-i18n="badge.infrastructure">Инфраструктура</span><h3>Terraform</h3><p data-i18n="card.terraform">Terraform, Ansible и Argo CD для управления инфраструктурой.</p></article>
+            <article class="card reveal"><span class="badge" data-i18n="badge.editor">Редактор</span><h3>VS Code</h3><p data-i18n="card.vscode">Редактор и расширения устанавливаются автоматически. Скачивать VS Code вручную не нужно.</p></article>
+            <article class="card reveal"><span class="badge" data-i18n="badge.languages">Языки</span><h3>Runtime tools</h3><p data-i18n="card.runtime">Актуальная база из Python, Go, Node.js и nvm.</p></article>
+            <article class="card reveal"><span class="badge">Everyday CLI</span><h3>Terminal tools</h3><p data-i18n="card.terminal">fzf, ripgrep, bat, eza, jq, yq, tmux и zoxide.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="checklist">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="checklist.eyebrow">Чек-лист установки</p>
+            <h2 data-i18n="checklist.title">Что поставить и проверить.</h2>
+            <p data-i18n="checklist.subtitle">Большую часть сделает скрипт. После него останется несколько коротких ручных действий.</p>
+          </div>
+          <div class="checklist-grid">
+            <article class="checklist-card reveal">
+              <span class="badge" data-i18n="checklist.autoBadge">Автоматически</span>
+              <h3 data-i18n="checklist.autoTitle">Скрипт установит</h3>
+              <ul class="checklist">
+                <li><span aria-hidden="true">✓</span><div><strong data-i18n="checklist.cliTitle">Homebrew и CLI</strong><p data-i18n="checklist.cliText">Git, jq, yq, fzf, ripgrep, bat, eza и другие утилиты.</p></div></li>
+                <li><span aria-hidden="true">✓</span><div><strong>VS Code</strong><p data-i18n="checklist.vscodeText">Приложение и расширения. Отдельно скачивать редактор не нужно.</p></div></li>
+                <li><span aria-hidden="true">✓</span><div><strong>Kubernetes tooling</strong><p>kubectl, Helm, k9s, kind, Argo CD, stern & kustomize.</p></div></li>
+                <li><span aria-hidden="true">✓</span><div><strong>Docker Desktop</strong><p data-i18n="checklist.dockerText">Приложение, Docker CLI и Docker Compose.</p></div></li>
+                <li><span aria-hidden="true">✓</span><div><strong data-i18n="checklist.shellTitle">Shell и dotfiles</strong><p data-i18n="checklist.shellText">Oh My Zsh, плагины, тема, aliases и managed Git config.</p></div></li>
+              </ul>
+            </article>
+            <article class="checklist-card reveal">
+              <span class="badge badge-neutral" data-i18n="checklist.afterBadge">После установки</span>
+              <h3 data-i18n="checklist.manualTitle">Сделайте вручную</h3>
+              <ul class="checklist checklist-manual">
+                <li><span aria-hidden="true">1</span><div><strong data-i18n="checklist.terminalTitle">Откройте новое окно Terminal</strong><p data-i18n="checklist.terminalText">Так загрузятся новые настройки Zsh и PATH.</p></div></li>
+                <li><span aria-hidden="true">2</span><div><strong data-i18n="checklist.startDockerTitle">Запустите Docker Desktop</strong><p data-i18n="checklist.startDockerText">Примите системные запросы и дождитесь запуска Docker Engine.</p></div></li>
+                <li><span aria-hidden="true">3</span><div><strong data-i18n="checklist.openCodeTitle">Откройте VS Code</strong><p data-i18n="checklist.openCodeText">При необходимости войдите в аккаунт и включите Settings Sync.</p></div></li>
+                <li><span aria-hidden="true">4</span><div><strong data-i18n="checklist.gitTitle">Настройте Git identity</strong><p data-i18n-html="checklist.gitText">Укажите собственные <code>user.name</code> и <code>user.email</code>.</p></div></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="install">
+        <div class="container split-layout">
+          <div class="section-heading align-left reveal">
+            <p class="eyebrow" data-i18n="install.eyebrow">Пять простых шагов</p>
+            <h2 data-i18n="install.title">От коробки до работы.</h2>
+            <p data-i18n="install.subtitle">Сначала прочитайте скрипт. Затем запустите и дождитесь понятного отчёта по каждому шагу.</p>
+          </div>
+          <ol class="steps reveal">
+            <li><span>1</span><div><strong data-i18n="install.step1Title">Откройте Terminal</strong><p data-i18n="install.step1Text">Подойдёт стандартный Terminal или iTerm2.</p></div></li>
+            <li><span>2</span><div><strong data-i18n="install.step2Title">Проверьте скрипт</strong><p data-i18n="install.step2Text">Посмотрите код до удалённого запуска.</p></div></li>
+            <li><span>3</span><div><strong data-i18n="install.step3Title">Запустите установку</strong><p data-i18n="install.step3Text">Одна команда запускает весь последовательный setup.</p></div></li>
+            <li><span>4</span><div><strong data-i18n="install.step4Title">Следите за логами</strong><p data-i18n="install.step4Text">Каждое действие явно отмечено в терминале.</p></div></li>
+            <li><span>5</span><div><strong data-i18n="install.step5Title">Перезапустите shell</strong><p data-i18n="install.step5Text">Откройте новое окно и начинайте работу.</p></div></li>
+          </ol>
+        </div>
+        <div class="container command-stack reveal">
+          <div class="code-card">
+            <div><span data-i18n="install.review">Проверить</span><button type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh" data-i18n="common.copy">Копировать</button></div>
+            <code>curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh</code>
+          </div>
+          <div class="code-card">
+            <div><span data-i18n="install.run">Установить</span><button type="button" data-copy="/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh)&quot;" data-i18n="common.copy">Копировать</button></div>
+            <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh)"</code>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="dotfiles">
+        <div class="container feature-panel reveal">
+          <div>
+            <p class="eyebrow" data-i18n="snapshot.eyebrow">Снимок системы</p>
+            <h2 data-i18n="snapshot.title">Сначала понять. Потом устанавливать.</h2>
+            <p data-i18n="snapshot.subtitle">Сборщик анализирует текущие пакеты, инструменты и безопасную часть конфигурации. Отчёт остаётся только на машине и не попадает в git.</p>
+          </div>
+          <div class="mini-terminal">
+            <span data-i18n="snapshot.collect">Собрать отчёт</span>
+            <code>./scripts/collect-current-system.sh</code>
+            <span data-i18n="snapshot.result">Результат</span>
+            <code>system-report/</code>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="security">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="security.eyebrow">Создано для проверки</p>
+            <h2 data-i18n="security.title">Безопасность видна в коде.</h2>
+          </div>
+          <div class="security-grid">
+            <article class="plain-card reveal"><strong data-i18n="security.backupTitle">Backup before changes</strong><p data-i18n="security.backupText">Existing configs are saved under ~/.macos-setup-backup/.</p></article>
+            <article class="plain-card reveal"><strong data-i18n="security.repeatTitle">Повторный запуск</strong><p data-i18n="security.repeatText">Установленные компоненты пропускаются, одинаковые файлы не копируются.</p></article>
+            <article class="plain-card reveal"><strong data-i18n="security.secretsTitle">Никаких секретов</strong><p data-i18n="security.secretsText">SSH keys, credentials, history и environment не переносятся.</p></article>
+            <article class="plain-card reveal"><strong data-i18n="security.defaultsTitle">Defaults только по согласию</strong><p data-i18n="security.defaultsText">Системные настройки macOS являются отдельным opt-in шагом.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container structure reveal">
+          <div>
+            <p class="eyebrow" data-i18n="structure.eyebrow">Открытая структура</p>
+            <h2 data-i18n="structure.title">Простая структура.</h2>
+            <p data-i18n="structure.subtitle">Каждый слой можно прочитать, изменить или запустить отдельно.</p>
+          </div>
+          <pre><code>.
+├── install.sh
+├── Brewfile
+├── README.md
+├── README.ru.md
+├── task.md
+├── .gitignore
+├── dotfiles/
+├── scripts/
+├── vscode/
+└── docs/</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p data-i18n="footer.text">macOS Setup — a personal bootstrap kit for a fresh macOS workspace.</p>
+        <div>
+          <a href="https://github.com/opsmon/setup">GitHub</a>
+          <a href="https://github.com/opsmon/setup#readme">README</a>
+          <a href="#install">Install</a>
+          <a href="#security">Security</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
