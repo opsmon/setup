@@ -21,12 +21,19 @@ Homebrew, приватные настройки и секреты были ис�
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh
+curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.py
 ```
 
-Запуск:
+Запуск через Bash:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh)"
+```
+
+Или запуск через Python:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.py | python3 -
 ```
 
 Или локально:
@@ -73,6 +80,7 @@ VS Code входит в автоматическую установку, поэ�
 ```text
 .
 ├── install.sh
+├── install.py
 ├── Brewfile
 ├── README.md
 ├── README.ru.md
@@ -90,6 +98,8 @@ VS Code входит в автоматическую установку, поэ�
 ./install.sh
 ./install.sh --dry-run
 ./install.sh --help
+python3 install.py
+python3 install.py --dry-run
 ```
 
 `--dry-run` показывает действия без установки пакетов и изменения конфигов.

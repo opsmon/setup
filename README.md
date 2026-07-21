@@ -22,12 +22,19 @@ Always review a remote script before running it:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh
+curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.py
 ```
 
-Run the setup:
+Run the setup with Bash:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh)"
+```
+
+Or run it with Python:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.py | python3 -
 ```
 
 Or clone it locally:
@@ -73,6 +80,7 @@ Desktop must be opened once after installation.
 ```text
 .
 ├── install.sh
+├── install.py
 ├── Brewfile
 ├── README.md
 ├── README.ru.md
@@ -90,6 +98,8 @@ Desktop must be opened once after installation.
 ./install.sh
 ./install.sh --dry-run
 ./install.sh --help
+python3 install.py
+python3 install.py --dry-run
 ```
 
 `--dry-run` displays planned actions without installing packages or changing

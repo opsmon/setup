@@ -66,8 +66,10 @@ const translations = {
     "install.step4Text": "Каждое действие явно отмечено в терминале.",
     "install.step5Title": "Перезапустите shell",
     "install.step5Text": "Откройте новое окно и начинайте работу.",
-    "install.review": "Проверить",
-    "install.run": "Установить",
+    "install.reviewBash": "Проверить Bash",
+    "install.reviewPython": "Проверить Python",
+    "install.runBash": "Установить через Bash",
+    "install.runPython": "Установить через Python",
     "snapshot.eyebrow": "Снимок системы",
     "snapshot.title": "Сначала понять. Потом устанавливать.",
     "snapshot.subtitle": "Сборщик анализирует текущие пакеты, инструменты и безопасную часть конфигурации. Отчёт остаётся только на машине и не попадает в git.",
@@ -155,8 +157,10 @@ const translations = {
     "install.step4Text": "Every action is clearly labeled in the terminal.",
     "install.step5Title": "Restart your shell",
     "install.step5Text": "Open a new window and get to work.",
-    "install.review": "Review",
-    "install.run": "Install",
+    "install.reviewBash": "Review Bash",
+    "install.reviewPython": "Review Python",
+    "install.runBash": "Install with Bash",
+    "install.runPython": "Install with Python",
     "snapshot.eyebrow": "System snapshot",
     "snapshot.title": "Understand first. Install second.",
     "snapshot.subtitle": "The collector reviews current packages, tools, and safe configuration metadata. The report stays on the machine and is excluded from Git.",
@@ -270,8 +274,6 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => item.classList.add("visible"));
 }
 
-const installCommand = document.querySelector("[data-install-command]")?.textContent ?? "";
-const installCopyButton = document.querySelector("[data-copy-install]");
 const copyButtons = document.querySelectorAll("[data-copy]");
 
 async function copyText(button, text) {
@@ -286,10 +288,6 @@ async function copyText(button, text) {
     button.textContent = translate("common.copy");
   }, 1600);
 }
-
-installCopyButton?.addEventListener("click", () => {
-  copyText(installCopyButton, installCommand);
-});
 
 copyButtons.forEach((button) => {
   button.addEventListener("click", () => {

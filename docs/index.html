@@ -47,13 +47,20 @@
 
           <div class="setup-window reveal" aria-label="Installation example" data-i18n-aria-label="hero.demo">
             <div class="window-bar">
-              <span class="window-title">setup.sh</span>
+              <span class="window-title">setup</span>
               <span class="window-status">ready</span>
             </div>
-            <div class="command-line">
-              <span class="prompt">$</span>
-              <code data-install-command>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh)"</code>
-              <button class="copy-button" type="button" data-copy-install data-i18n="common.copy">Copy</button>
+            <div class="command-options">
+              <div class="command-line">
+                <span class="prompt">bash</span>
+                <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh)"</code>
+                <button class="copy-button" type="button" data-copy="/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh)&quot;" data-i18n="common.copy">Copy</button>
+              </div>
+              <div class="command-line">
+                <span class="prompt">python</span>
+                <code>curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.py | python3 -</code>
+                <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.py | python3 -" data-i18n="common.copy">Copy</button>
+              </div>
             </div>
             <div class="install-flow">
               <div><span>01</span><strong>Homebrew</strong><small data-i18n="flow.homebrew">Package foundation</small></div>
@@ -135,12 +142,20 @@
         </div>
         <div class="container command-stack reveal">
           <div class="code-card">
-            <div><span data-i18n="install.review">Проверить</span><button type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh" data-i18n="common.copy">Копировать</button></div>
+            <div><span data-i18n="install.reviewBash">Проверить Bash</span><button type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh" data-i18n="common.copy">Копировать</button></div>
             <code>curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh</code>
           </div>
           <div class="code-card">
-            <div><span data-i18n="install.run">Установить</span><button type="button" data-copy="/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh)&quot;" data-i18n="common.copy">Копировать</button></div>
+            <div><span data-i18n="install.reviewPython">Проверить Python</span><button type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.py" data-i18n="common.copy">Копировать</button></div>
+            <code>curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.py</code>
+          </div>
+          <div class="code-card">
+            <div><span data-i18n="install.runBash">Установить через Bash</span><button type="button" data-copy="/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh)&quot;" data-i18n="common.copy">Копировать</button></div>
             <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.sh)"</code>
+          </div>
+          <div class="code-card">
+            <div><span data-i18n="install.runPython">Установить через Python</span><button type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.py | python3 -" data-i18n="common.copy">Копировать</button></div>
+            <code>curl -fsSL https://raw.githubusercontent.com/opsmon/setup/main/install.py | python3 -</code>
           </div>
         </div>
       </section>
@@ -185,6 +200,7 @@
           </div>
           <pre><code>.
 ├── install.sh
+├── install.py
 ├── Brewfile
 ├── README.md
 ├── README.ru.md
